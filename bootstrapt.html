@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+ 
+<!-- If IE use the latest rendering engine -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+ 
+<!-- Set the page to the width of the device and set the zoon level -->
+<meta name="viewport" content="width = device-width, initial-scale = 1">
+<title>Bootstrap</title>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+<div class="row">
+<div id="accordion" class="panel-group">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a href="#panelBodyOne" data-toggle="collapse" data-parent="#accordion">
+                <span class="glyphicon glyphicon-menu-down pull-right"></span>
+                Marvel 1 
+                </a>
+            </h4>
+        </div>
+        <div id="panelBodyOne" class="panel-collapse collapse">
+            <div class="panel-body">
+                        
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <img onclick="myFunc(this)" src="ironman.jpg" alt="Ironman" height="275" width="183">
+                            <p>Iron Man is a fictional superhero appearing in American comic books published by Marvel Comics. 
+                                The character was co-created by writer and editor Stan Lee</p>
+                                
+                                
+                            
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"> 
+                            <img onclick="myFunc(this)" src="blackpanther.jpg" alt="Blackpanther" height="275" width="183">
+                            <p>Black Panther is a 2018 American superhero film based on the Marvel Comics character of the same name. </p>
+                        </div>
+                        <div class="clearfix visible-sm"></div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <img onclick="myFunc(this)" src="spiderman.jpg" alt="Spiderman" height="275" width="183">
+                            <p>Spider-Man is a fictional superhero created by writer-editor Stan Lee and writer-artist Steve Ditko. </p>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <img onclick="myFunc(this)" src="captain.jpg" alt="Captain" height="275" width="183">
+                            <p>Captain America is a fictional superhero appearing in American comic books published by Marvel Comics. Created by cartoonists Joe Simon and Jack Kirby,</p>
+                        </div>
+            <style>
+                .panel-body{
+                    text-align: center;
+                }
+            </style>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a href="#panelBodyTwo" data-toggle="collapse" data-parent="#accordion">
+                        <span class="glyphicon glyphicon-menu-down pull-right"></span>
+                        Marvel 2
+                    </a>
+                </h4>
+            </div>
+            <div id="panelBodyTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+                            
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                <img src="vision.jpg" alt="Vision" height="275" width="183">
+                                
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"> 
+                                <img src="blackwidow.jpg" alt="Blackwidow" height="275" width="183">
+                            
+                            </div>
+                            <div class="clearfix visible-sm"></div>
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                <img src="hulk.jpg" alt="Hulk" height="275" width="183">
+                            
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                <img src="thor.jpg" alt="Thor" height="275" width="183">
+                            
+                            </div>
+                </div>
+            </div>
+    </div>
+    
+</div>
+<div class="modal" id="Modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+                <span class="close" onclick="modal.style.display='none'">&times;</span>
+                    
+                <img id="img">
+                                    
+                <style>
+                        .modal{
+                            text-align: center;
+                        }
+                    </style> 
+        </div>
+               
+    </div>
+                        
+</div>
+
+</div>
+
+</div>   
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.collapse').on('shown.bs.collapse', function(){
+            $(this).parent().find('.glyphicon-menu-down').removeClass('glyphicon-menu-down').addClass('glyphicon-menu-up')
+        }).on('hidden.bs.collapse', function(){
+            $(this).parent().find('.glyphicon-menu-up').removeClass('glyphicon-menu-up').addClass('glyphicon-menu-down')
+        })
+
+    });
+</script>
+<script>
+    var modal = document.getElementById("Modal");
+    var modalImg = document.getElementById("img");
+    
+    
+    function myFunc(el){
+        var imgSrc = el.src;
+        modal.style.display = "block";
+        modalImg.src = imgSrc;
+    }
+
+    window.onclick = function(event){
+        if(event.target == modal){
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
