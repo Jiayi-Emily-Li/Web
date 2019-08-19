@@ -1,6 +1,5 @@
 $(document).ready(function(){
     
-    console.log("I am redy");
     $('.collapse').on('shown.bs.collapse', function(){
         $(this).parent().find('.glyphicon-menu-down').removeClass('glyphicon-menu-down').addClass('glyphicon-menu-up')
     }).on('hidden.bs.collapse', function(){
